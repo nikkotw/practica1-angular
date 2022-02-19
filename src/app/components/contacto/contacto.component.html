@@ -1,1 +1,39 @@
-<p>contacto works!</p>
+<h2>Contacto</h2>
+<h3>Por favor Dejenos un mensaje</h3>
+    <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+        <div>
+          <label for="name">
+            Name
+          </label>
+          <input id="name" type="text" formControlName="name">
+        </div>
+      
+        <div>
+          <label for="address">
+            Address
+          </label>
+          <input id="email" type="text" formControlName="email">
+        </div>
+
+        <div>
+            <label for="asunto">
+                asunto
+            </label>
+            <input id="asunto" type="text" formControlName="asunto">
+          </div>
+          <div>
+            <label for="descrpcion">
+                descripcion
+            </label>
+            <input id="descrpcion" type="text" formControlName="descrpcion">
+          </div>
+      
+        <button class="button" type="submit">Enviar</button>
+      
+      </form>
+<hr>
+<br>
+<div *ngIf="status">
+    <h2>Los datos Ingresados Fueron</h2>
+    <h3>El nombre ingresado Fue : {{nombre}}</h3>
+</div>

@@ -1,2 +1,46 @@
-<h1>este es mi contenido</h1>
-<img src="../../../assets/logo.jpg">
+<div>
+    <form [formGroup]="formulario" (ngSubmit)="CHILLSAVE()">
+        <div>
+          <label for="nombre">
+            Nombre
+          </label>
+          <input id="nombre" type="text" formControlName="nombre">
+        </div>
+      
+        <div>
+          <label for="apellido">
+            Apellido
+          </label>
+          <input id="apellido" type="text" formControlName="apellido">
+        </div>
+
+        <div>
+            <label for="email">
+                email
+            </label>
+            <input id="email" type="text" formControlName="email">
+          </div>
+          <div>
+            <label for="telefono">
+                telefono
+            </label>
+            <input id="telefono" type="text" formControlName="telefono">
+          </div>
+      
+        <button class="button" type="submit">Guardar</button>
+      
+      </form>
+
+</div>
+<hr>
+<h1>ListadoUsuarios</h1>
+<table>
+    <tr>
+        <th>Nombre</th>
+    </tr>
+    <tbody *ngFor="let user of usuarios">
+            <tr>
+                <td>{{user.nombre}}</td>
+            </tr>
+    </tbody>
+</table>
