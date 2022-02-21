@@ -7,14 +7,19 @@ import { FormBuilder, FormControl,FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./contacto.component.css']
 })
 export class ContactoComponent implements OnInit {
-  checkoutForm = this.formBuilder.group({
+  formulario = this.formBuilder.group({
     name: '',
     email: '',
     asunto:'',
     descrpcion:'',
   });
 
-  nombre = '';
+  nombre:string = "";
+  email:string = "";
+  asunto:string= "";
+  descripcion:string = "";
+
+
   status = false;
 
   constructor(private formBuilder: FormBuilder,) { 
@@ -25,6 +30,6 @@ export class ContactoComponent implements OnInit {
 
   onSubmit(){
     this.status = true
-    this.nombre = this.checkoutForm.get('name')?.value
+    this.nombre = this.formulario.get('name')?.value
   }
 }
