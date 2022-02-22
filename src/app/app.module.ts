@@ -8,6 +8,8 @@ import { HomeComponent } from './components/home/home.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ListadoComponent } from './components/listado/listado.component';
 
 
 @NgModule({
@@ -16,13 +18,15 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
     contenidoComponent,
     FooterComponent,
     HomeComponent,
-    ContactoComponent
+    ContactoComponent,
+    ListadoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,11 +1,7 @@
 import {Component} from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { User } from 'src/app/interface/user.modelo';
-
-// NO SE HACE!!!! EL PROFE LO HIZO DE EJEMPLO!!
-
-
-
+import { User } from 'src/app/interface/user.modelo'; // IMPORTAMOS INTERFACE!! 
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
     selector: 'contenido-com',
@@ -24,22 +20,20 @@ export class contenidoComponent{
     });
 
   
-
     usuarios:User[]=[];
-    constructor(private nuevoFormualario:FormBuilder){
+    constructor(private nuevoFormualario:FormBuilder,private UserService:UserService){
     }
 
 
     CHILLSAVE(){
+
             let nuevoUser : User = {
                 nombre :this.formulario.get('nombre')?.value,
                 apellido:this.formulario.get('apellido')?.value,
                 email:this.formulario.get('email')?.value,
                 telefono:this.formulario.get('telefono')?.value, 
             }
-        
-
-            this.usuarios.push(nuevoUser);//PONER EN ARRAY
+            this.UserService.addUser(nuevoUser);
 
             console.log(this.usuarios);
             this.limpiarForm();

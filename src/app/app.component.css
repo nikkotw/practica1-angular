@@ -2,3 +2,13 @@
     background-color: brown;
     height: 150px;
   }
+
+
+.webView{
+  background-color: black;
+  color: green;
+  border: 15px solid black;
+}
+body{
+  background-color: black;
+}

@@ -4,3 +4,5 @@ export interface User {
     email:string,
     telefono:number,    
 };
+
+//MODELOS DEL OBJETO Q VAYAMOS A USAR.....GENERALMENTE SE USA CUANDO VAMOS A USAR OBJECTOS DE LA BD.
